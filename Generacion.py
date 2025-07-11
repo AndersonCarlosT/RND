@@ -77,7 +77,7 @@ if archivo_ref and archivos_generacion:
         # Generar Excel con encabezado en filas 1-3 (A1:B3)
         output = BytesIO()
         with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-            base_df.to_excel(writer, index=False, startrow=3, header=False, sheet_name="Generacion")
+            base_df.to_excel(writer, index=False, startrow=3, header=False, sheet_name="Hoja1")
             worksheet = writer.sheets["Generacion"]
 
             # Escribir encabezados jerárquicos manualmente
