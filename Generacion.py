@@ -12,7 +12,7 @@ archivo_ref = st.file_uploader("📂 Sube el archivo principal con códigos de s
 archivos_generacion = st.file_uploader("📂 Sube los archivos de generación (.csv)", type=["csv"], accept_multiple_files=True)
 
 if archivo_ref and archivos_generacion:
-    df_ref = pd.read_excel(archivo_ref, header=None)
+    df_ref = pd.read_excel(archivo_ref, header=0)
     
     cod_suministros = df_ref.iloc[:, 0]
     clientes = df_ref.iloc[:, 1]
