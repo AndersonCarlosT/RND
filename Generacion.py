@@ -9,7 +9,7 @@ st.title("📁 Comparador de PODs y Generación")
 archivo_ref = st.file_uploader("📂 Sube el archivo principal con códigos de suministro, cliente y POD", type=["xlsx"])
 
 # Subida de archivos de generación
-archivos_generacion = st.file_uploader("📂 Sube los archivos de generación (uno por cada código de suministro)", type=["xlsx"], accept_multiple_files=True)
+archivos_generacion = st.file_uploader("📂 Sube los archivos de generación (.csv)", type=["csv"], accept_multiple_files=True)
 
 if archivo_ref and archivos_generacion:
     df_ref = pd.read_excel(archivo_ref, header=None)
@@ -35,7 +35,7 @@ if archivo_ref and archivos_generacion:
     pod_data = {}
 
     for archivo in archivos_generacion:
-        df_raw = pd.read_excel(archivo, header=None)
+        df_raw = pd.read_csv(archivo, header=None)
         df_split = df_raw[0].str.split(",", expand=True)
 
         if df_split.shape[1] < 4:
