@@ -92,7 +92,7 @@ if archivo_ref and archivos_generacion:
         st.download_button(
             label="📥 Descargar archivo 'Generacion.xlsx'",
             data=output,
-            file_name="Generacion.xlsx",
+            file_name="RND.xlsx",
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
 
